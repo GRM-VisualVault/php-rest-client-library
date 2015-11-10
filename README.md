@@ -27,14 +27,18 @@ WELCOME TO THE PHP VISUAL VAULT REST API CLIENT LIBRARY
 
 NOTE:
 
-. If you will be using this application as a library to make requests in your own application, do not include requests.php
-in your application or simply commment out the page. But please do use requests.php as a reference for how to properly 
-call each method, instatiate each class, and how to successfully pass in the parameters needed for each method.
-
 . If you will be using this application to make requests not in your own application then head to the requests.php page.
- A class has been instantiated for each endpoint already. Under the instantiation you may call the methods 
- needed for your request. Examples on the requests.php page will show you how to properly execute a request for each method. 
+A class has been instantiated for each endpoint already. Under the instantiation you may call the methods 
+needed for your request. Examples on the requests.php page will show you how to properly execute a request for each method.
+
+. If you will be using this application as a library to make requests in your own application, DO NOT include requests.php
+in your own application. But please DO USE requests.php as a reference for how to properly instantiate each class, 
+call each method, and how to successfully pass in the parameters needed for each method in your own application. You will need
+to instantiate each class (i.e. create an object) for each endpoint you would like to use in your application. 
+Then you may use 'objectName->methodName(param);' to make a request in your application. 
+You will also need to place require_once 'pathTo/filename.php' on each page using a method from the library. 
+Currently all the methods lie in php files in the endpoints folder. 
 
 . For more information on any of the endpoints, datatypes, or anything referring to the REST API please refer
-  to the HTTP API section at http://developer.visualvault.com/ where each endpoint and there parameters are
-  covered in great detail.
+to the HTTP API section at http://developer.visualvault.com/ where each endpoint and there parameters are
+covered in great detail.
