@@ -33,8 +33,8 @@ needed for your request. Examples on the requests.php page will show you how to 
 
 . If you will be using this application as a library to make requests in your own application, DO NOT include requests.php
 in your own application. But please DO USE requests.php as a reference for how to properly instantiate each class, 
-call each method, and how to successfully pass in the parameters needed for each method in your own application. You will need
-to instantiate each class (i.e. create an object) for each endpoint you would like to use in your application. 
+call each method, and how to successfully pass in the parameters needed for each method in your own application. 
+You will need to instantiate each class (i.e. create an object) for each endpoint you would like to use in your application. 
 Then you may use 'objectName->methodName(param);' to make a request in your application. 
 You will also need to place require_once 'pathTo/filename.php' on each page using a method from the library. 
 Currently all the methods lie in php files in the endpoints folder. 
