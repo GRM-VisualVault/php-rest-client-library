@@ -9,33 +9,36 @@
 // if you will be using the library in your own application, look to the method calls on this page
 // on how to properly call a method and execute a request. 
 
-// IMPORT ENDPOINT FILES
-require_once 'endpoints/documents.php';
-require_once 'endpoints/emails.php';
-require_once 'endpoints/files.php';
-require_once 'endpoints/folders.php';
-require_once 'endpoints/formInstance.php';
-require_once 'endpoints/formTemplates.php';
-require_once 'endpoints/groups.php';
-require_once 'endpoints/indexFields.php';
-require_once 'endpoints/meta.php';
-require_once 'endpoints/pData.php';
-require_once 'endpoints/sites.php';
-require_once 'endpoints/users.php';
+// If you would like to use this page to make requests uncomment the import endpoint files section
+// and the class instantiations. next unccomment a method and update the parameters to use it. 
 
-// CLASS INSTANTIATIONS
-$docRequest = new Documents();
-$emailRequest = new Emails();
-$filesRequest = new Files();
-$foldersRequest = new Folders();
-$formInstanceRequest = new FormInstance();
-$formTemplatesRequest = new FormTemplates();
-$groupsRequest = new Groups();
-$indexFieldsRequest = new IndexFields();
-$metaRequest = new Meta();
-$pdataRequest = new PersistedData();
-$sitesRequest = new Sites();
-$usersRequest = new Users();
+// // IMPORT ENDPOINT FILES
+// require_once 'endpoints/documents.php';
+// require_once 'endpoints/emails.php';
+// require_once 'endpoints/files.php';
+// require_once 'endpoints/folders.php';
+// require_once 'endpoints/formInstance.php';
+// require_once 'endpoints/formTemplates.php';
+// require_once 'endpoints/groups.php';
+// require_once 'endpoints/indexFields.php';
+// require_once 'endpoints/meta.php';
+// require_once 'endpoints/pData.php';
+// require_once 'endpoints/sites.php';
+// require_once 'endpoints/users.php';
+
+// // CLASS INSTANTIATIONS
+// $docRequest = new Documents();
+// $emailRequest = new Emails();
+// $filesRequest = new Files();
+// $foldersRequest = new Folders();
+// $formInstanceRequest = new FormInstance();
+// $formTemplatesRequest = new FormTemplates();
+// $groupsRequest = new Groups();
+// $indexFieldsRequest = new IndexFields();
+// $metaRequest = new Meta();
+// $pdataRequest = new PersistedData();
+// $sitesRequest = new Sites();
+// $usersRequest = new Users();
 
 // ------------------------- REQUESTS --------------------------- 
 
