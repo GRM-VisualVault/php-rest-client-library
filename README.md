@@ -7,7 +7,7 @@ php5, php5-curl
 
 WELCOME TO THE PHP VISUAL VAULT REST API CLIENT LIBRARY
 
-* This application serves as a method for accessing the Visual Vault REST API while using PHP to handle the requests.
+* This application serves as a method for accessing the Visual Vault REST API while using PHP.
 
 * Start with the token.php page and declare your constants on that page (your credentials). 
 
