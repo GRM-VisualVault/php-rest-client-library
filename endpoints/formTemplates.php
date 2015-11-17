@@ -156,7 +156,7 @@ class FormTemplates extends Auth{
 			$login = url . '/VVlogin?token=' . $token;
 			$returnUrl = '&returnUrl=~%2fFormDetails%3fformid%3d' . $formId;
 			$request = $login . $returnUrl;
-			echo $request . PHP_EOL;			
+			return $request;			
 	}
 }
 ?>

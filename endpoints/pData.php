@@ -105,7 +105,7 @@ class PersistedData extends Auth{
 			$login = url . '/VVlogin?token=' . $token;
 			$returnUrl = '&returnUrl=~%2fFormDetails%3fformid%3d' . $formId . '%26persistedId%3d' . $pDataId;
 			$request = $login . $returnUrl;
-			echo $request . PHP_EOL;			
+			return $request;			
 		}
 	}
 ?>

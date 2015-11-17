@@ -109,7 +109,7 @@ $usersRequest = new Users();
 // 	'favTeam' => 'still Raiders',
 // 	'likeCoffeeBlack' => 'claro'
 // 	]);
-// $formTemplatesRequest->embedForm('9d4d2408-1183-e511-bf05-9c4e36b08790','6ccf5264-4f8d-e511-bf05-9c4e36b08790');
+// echo $formTemplatesRequest->embedForm('9d4d2408-1183-e511-bf05-9c4e36b08790','6ccf5264-4f8d-e511-bf05-9c4e36b08790');
 
 // GROUPS 
 
@@ -141,8 +141,8 @@ $usersRequest = new Users();
 // $pdataRequest->getPdataId('17bd31bb-6cd6-43b0-be65-55e2002d91a6');
 // $pdataRequest->postPdata('phpPDATA2',1,"{\"DataField2\":\"claro que si\",\"DataField4\":\"oh no no no\"}",
 // 	'text/JSON','',0,null);
-// $pdataRequest->postFormPdata('9d4d2408-1183-e511-bf05-9c4e36b08790','c054e3bb-bd4c-4185-8d45-cf062d369a66',
-// 	'2df2aa17-9184-e511-bf05-9c4e36b08790');
+// echo $pdataRequest->postFormPdata('9d4d2408-1183-e511-bf05-9c4e36b08790','c054e3bb-bd4c-4185-8d45-cf062d369a66',
+// 	'6ccf5264-4f8d-e511-bf05-9c4e36b08790');
 
 // SITES 
 
