@@ -147,5 +147,16 @@ class FormTemplates extends Auth{
 			curl_exec($ch);
 			curl_close($ch);
 	}
+
+	// the embedForm method allows a form instance to be embedded in a application.  
+	// $formId is the template revision id you would like to create an instance of.
+	// $token is a webtoken which can be returned from the getUsersToken method from the users endpoint.
+	// this method will return a URL that one could integrate into their application to direct a user to a form.
+	function embedForm($formId,$token){
+			$login = url . '/VVlogin?token=' . $token;
+			$returnUrl = '&returnUrl=~%2fFormDetails%3fformid%3d' . $formId;
+			$request = $login . $returnUrl;
+			echo $request . PHP_EOL;			
+	}
 }
 ?>

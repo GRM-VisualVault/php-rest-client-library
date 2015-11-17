@@ -1,4 +1,5 @@
 <?php
+//EXAMPLE CODE
 // the requests.php page is the page where methods are called and requests are made.
 // An object of each endpoint has already been created below.
 // for a reference of the parameters needed to pass in, please see the appropriate method in the endpoints folder. 
@@ -9,36 +10,33 @@
 // if you will be using the library in your own application, look to the method calls on this page
 // on how to properly call a method and execute a request. 
 
-// If you would like to use this page to make requests uncomment the import endpoint files section
-// and the class instantiations. next unccomment a method and update the parameters to use it. 
+// IMPORT ENDPOINT FILES
+require_once 'endpoints/documents.php';
+require_once 'endpoints/emails.php';
+require_once 'endpoints/files.php';
+require_once 'endpoints/folders.php';
+require_once 'endpoints/formInstance.php';
+require_once 'endpoints/formTemplates.php';
+require_once 'endpoints/groups.php';
+require_once 'endpoints/indexFields.php';
+require_once 'endpoints/meta.php';
+require_once 'endpoints/pData.php';
+require_once 'endpoints/sites.php';
+require_once 'endpoints/users.php';
 
-// // IMPORT ENDPOINT FILES
-// require_once 'endpoints/documents.php';
-// require_once 'endpoints/emails.php';
-// require_once 'endpoints/files.php';
-// require_once 'endpoints/folders.php';
-// require_once 'endpoints/formInstance.php';
-// require_once 'endpoints/formTemplates.php';
-// require_once 'endpoints/groups.php';
-// require_once 'endpoints/indexFields.php';
-// require_once 'endpoints/meta.php';
-// require_once 'endpoints/pData.php';
-// require_once 'endpoints/sites.php';
-// require_once 'endpoints/users.php';
-
-// // CLASS INSTANTIATIONS
-// $docRequest = new Documents();
-// $emailRequest = new Emails();
-// $filesRequest = new Files();
-// $foldersRequest = new Folders();
-// $formInstanceRequest = new FormInstance();
-// $formTemplatesRequest = new FormTemplates();
-// $groupsRequest = new Groups();
-// $indexFieldsRequest = new IndexFields();
-// $metaRequest = new Meta();
-// $pdataRequest = new PersistedData();
-// $sitesRequest = new Sites();
-// $usersRequest = new Users();
+// CLASS INSTANTIATIONS
+$docRequest = new Documents();
+$emailRequest = new Emails();
+$filesRequest = new Files();
+$foldersRequest = new Folders();
+$formInstanceRequest = new FormInstance();
+$formTemplatesRequest = new FormTemplates();
+$groupsRequest = new Groups();
+$indexFieldsRequest = new IndexFields();
+$metaRequest = new Meta();
+$pdataRequest = new PersistedData();
+$sitesRequest = new Sites();
+$usersRequest = new Users();
 
 // ------------------------- REQUESTS --------------------------- 
 
@@ -111,6 +109,7 @@
 // 	'favTeam' => 'still Raiders',
 // 	'likeCoffeeBlack' => 'claro'
 // 	]);
+// $formTemplatesRequest->embedForm('9d4d2408-1183-e511-bf05-9c4e36b08790','6ccf5264-4f8d-e511-bf05-9c4e36b08790');
 
 // GROUPS 
 
