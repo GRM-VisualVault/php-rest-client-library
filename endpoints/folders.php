@@ -15,10 +15,12 @@ class Folders extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getFolderId method will request a folder by folderId.
@@ -33,10 +35,12 @@ class Folders extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getSubFolders method will request all subfolders of a folder by folderId.
@@ -51,10 +55,12 @@ class Folders extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getFolderDocs method will return all documents in a folder.
@@ -69,10 +75,12 @@ class Folders extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getFolderIndexFields method will return index fields of a folder.
@@ -87,10 +95,12 @@ class Folders extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getFolderIndexFieldsId method will return a folderIndexField.
@@ -105,10 +115,12 @@ class Folders extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getSelectOptions method will return a list of folderIndexField select options.
@@ -123,10 +135,12 @@ class Folders extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the postFolder method creates a folder.
@@ -148,10 +162,12 @@ class Folders extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_POSTFIELDS => http_build_query($fields),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the postSubFolder method creates a subfolder of a folder.
@@ -174,10 +190,12 @@ class Folders extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_POSTFIELDS => http_build_query($fields),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the putFolderIndexFields method updates a folder index field. 
@@ -206,10 +224,12 @@ class Folders extends Auth{
 				CURLOPT_HTTPHEADER => array(
 					'Authorization: Bearer ' . $AccessToken),
 				CURLOPT_POSTFIELDS => http_build_query($fields),
-				CURLOPT_URL => $request
+				CURLOPT_URL => $request,
+				CURLOPT_RETURNTRANSFER => 1
 				));
-			curl_exec($ch);
-			curl_close($ch);
+		$response = curl_exec($ch);
+		curl_close($ch);
+		return $response;
 	}
 }
 ?>

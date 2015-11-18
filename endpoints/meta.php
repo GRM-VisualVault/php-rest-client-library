@@ -13,10 +13,12 @@ class Meta extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getMeta method requests meta data by data type.
@@ -32,10 +34,12 @@ class Meta extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 }
 ?>

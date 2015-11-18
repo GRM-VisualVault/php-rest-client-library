@@ -14,10 +14,12 @@ class PersistedData extends Auth{
 		    CURLOPT_CUSTOMREQUEST => 'DELETE',
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// this method will request all instances of persisted data. 
@@ -31,10 +33,12 @@ class PersistedData extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// this method will request an instance of persisted data by id. 
@@ -49,10 +53,12 @@ class PersistedData extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}	
 
 	// the postPdata method will create an instance of persisted data. 
@@ -88,10 +94,12 @@ class PersistedData extends Auth{
 		    	CURLOPT_HTTPHEADER => array(
 					'Authorization: Bearer ' . $AccessToken),
 		    	CURLOPT_URL => $request,
-		    	CURLOPT_POSTFIELDS => http_build_query($fields)
+		    	CURLOPT_POSTFIELDS => http_build_query($fields),
+				CURLOPT_RETURNTRANSFER => 1
 		    	));
-			curl_exec($ch);
+			$response = curl_exec($ch);
 			curl_close($ch);
+			return $response;
 	}
 
 	// the postFormPdata method allows a form instance to be populated from an instance of persisted data. 

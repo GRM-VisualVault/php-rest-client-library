@@ -13,10 +13,12 @@ class FormTemplates extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getFormTemplatesId method returns a form template by id.
@@ -31,10 +33,12 @@ class FormTemplates extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getFields method will return a list of fields for a form template.
@@ -49,10 +53,12 @@ class FormTemplates extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getForms method will return a list of form instances of a form template.
@@ -67,10 +73,12 @@ class FormTemplates extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getFormsId method will return a form instance of a form template.
@@ -86,10 +94,12 @@ class FormTemplates extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}	
 
 	// the postForm method creates an instance of a form by filling out the form fields.
@@ -108,20 +118,22 @@ class FormTemplates extends Auth{
 	//	]
 	// see the method call on requests.php.
 	function postForm($id,$fieldsValueArray){
-			$AccessToken = Auth::token();
-			$baseUrl = url . '/api/v1/' . customerAlias . '/' . databaseAlias;
-			$endpoint = '/formtemplates/';
-			$request = $baseUrl . $endpoint . $id . '/forms';
-			$ch = curl_init();
-			curl_setopt_array($ch, array(
-			    CURLOPT_POST => true,
-			    CURLOPT_HTTPHEADER => array(
-					'Authorization: Bearer ' . $AccessToken),
-			    CURLOPT_POSTFIELDS => http_build_query($fieldsValueArray),
-			    CURLOPT_URL => $request
-			    ));
-			curl_exec($ch);
-			curl_close($ch);
+		$AccessToken = Auth::token();
+		$baseUrl = url . '/api/v1/' . customerAlias . '/' . databaseAlias;
+		$endpoint = '/formtemplates/';
+		$request = $baseUrl . $endpoint . $id . '/forms';
+		$ch = curl_init();
+		curl_setopt_array($ch, array(
+		    CURLOPT_POST => true,
+		    CURLOPT_HTTPHEADER => array(
+				'Authorization: Bearer ' . $AccessToken),
+		    CURLOPT_POSTFIELDS => http_build_query($fieldsValueArray),
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
+		    ));
+		$response = curl_exec($ch);
+		curl_close($ch);
+		return $response;
 	} 
 
 	// the reviseFormInstance method will create a new revision of a formInstance.
@@ -132,20 +144,22 @@ class FormTemplates extends Auth{
 	// corresponding to the form fields, and not the actual form fields themselves. 
 	// this can be thought of as re-filling out a form. 
 	function reviseFormInstance($id,$revId,$fieldsValueArray){
-			$AccessToken = Auth::token();
-			$baseUrl = url . '/api/v1/' . customerAlias . '/' . databaseAlias;
-			$endpoint = '/formtemplates/';
-			$request = $baseUrl . $endpoint . $id . '/forms/' . $revId;
-			$ch = curl_init();
-			curl_setopt_array($ch, array(
-			    CURLOPT_POST => true,
-			    CURLOPT_HTTPHEADER => array(
-					'Authorization: Bearer ' . $AccessToken),
-			    CURLOPT_POSTFIELDS => http_build_query($fieldsValueArray),
-			    CURLOPT_URL => $request
-			    ));
-			curl_exec($ch);
-			curl_close($ch);
+		$AccessToken = Auth::token();
+		$baseUrl = url . '/api/v1/' . customerAlias . '/' . databaseAlias;
+		$endpoint = '/formtemplates/';
+		$request = $baseUrl . $endpoint . $id . '/forms/' . $revId;
+		$ch = curl_init();
+		curl_setopt_array($ch, array(
+		    CURLOPT_POST => true,
+		    CURLOPT_HTTPHEADER => array(
+				'Authorization: Bearer ' . $AccessToken),
+		    CURLOPT_POSTFIELDS => http_build_query($fieldsValueArray),
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
+		    ));
+		$response = curl_exec($ch);
+		curl_close($ch);
+		return $response;
 	}
 
 	// the embedForm method allows a form instance to be embedded in a application.  
@@ -153,10 +167,10 @@ class FormTemplates extends Auth{
 	// $token is a webtoken which can be returned from the getUsersToken method from the users endpoint.
 	// this method will return a URL that one could integrate into their application to direct a user to a form.
 	function embedForm($formId,$token){
-			$login = url . '/VVlogin?token=' . $token;
-			$returnUrl = '&returnUrl=~%2fFormDetails%3fformid%3d' . $formId;
-			$request = $login . $returnUrl;
-			return $request;			
+		$login = url . '/VVlogin?token=' . $token;
+		$returnUrl = '&returnUrl=~%2fFormDetails%3fformid%3d' . $formId;
+		$request = $login . $returnUrl;
+		return $request;			
 	}
 }
 ?>

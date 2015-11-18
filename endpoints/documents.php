@@ -14,10 +14,12 @@ class Documents extends Auth{
 		    CURLOPT_CUSTOMREQUEST => 'DELETE',
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getDoc method will request a document by using a query string parameter $q. 
@@ -33,10 +35,12 @@ class Documents extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getDocId method will request a document by documentId.
@@ -51,10 +55,12 @@ class Documents extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 	
 	// the getDocIdRev method requests all revisions of a document by documentId.
@@ -69,10 +75,12 @@ class Documents extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getDocIdRevId method requests a specific revision of a document.
@@ -87,10 +95,12 @@ class Documents extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getDocIndexFields method returns all indexfields of a document.
@@ -105,10 +115,12 @@ class Documents extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getDocIndexFieldsId method returns a document index field. 
@@ -123,10 +135,12 @@ class Documents extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getDocRevIndexFields method returns all index fields of a revision of a document.
@@ -141,10 +155,12 @@ class Documents extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getDocRevIndexFieldsId method returns a document index field.
@@ -160,10 +176,12 @@ class Documents extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the putDocIndexFieldsId updates the value of a document index field.
@@ -183,10 +201,12 @@ class Documents extends Auth{
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the putDocIndexFields changes the value of a document index field.
@@ -209,10 +229,12 @@ class Documents extends Auth{
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the postDoc method will create a blank document with revision 1.
@@ -243,10 +265,12 @@ class Documents extends Auth{
     			CURLOPT_HTTPHEADER => array(
         			'Authorization: Bearer ' . $AccessToken),
     			CURLOPT_POSTFIELDS => http_build_query($fields),
-    			CURLOPT_URL => $request
+    			CURLOPT_URL => $request,
+				CURLOPT_RETURNTRANSFER => 1
     			));
-			curl_exec($ch);
+			$response = curl_exec($ch);
 			curl_close($ch);
+			return $response;
 	} 
 }
 ?>

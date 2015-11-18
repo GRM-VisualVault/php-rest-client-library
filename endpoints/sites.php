@@ -1,5 +1,5 @@
 <?php
-// the sites class
+// sites class
 require_once 'token.php';
 class Sites extends Auth{
 	// the getSites method will return all sites.
@@ -13,10 +13,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getSitesId method will return a site by siteId.
@@ -31,10 +33,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getSitesGroups method will return a list of groups belonging to the site.
@@ -49,10 +53,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getSitesGroupsId method will return a group belonging to the site.
@@ -67,10 +73,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getSitesUsers method will return a list of users.
@@ -85,10 +93,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getSitesUsersId method will return a user.
@@ -103,10 +113,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the postSites method creates a site.
@@ -126,10 +138,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_URL => $request,
-		    CURLOPT_POSTFIELDS => http_build_query($fields)
+		    CURLOPT_POSTFIELDS => http_build_query($fields),
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the postSitesGroups method creates a group for a site.
@@ -150,10 +164,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_URL => $request,
-		    CURLOPT_POSTFIELDS => http_build_query($fields)
+		    CURLOPT_POSTFIELDS => http_build_query($fields),
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the postSitesUsers method creates a user for a site.
@@ -178,10 +194,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_URL => $request,
-		    CURLOPT_POSTFIELDS => http_build_query($fields)
+		    CURLOPT_POSTFIELDS => http_build_query($fields),
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the putSites method updates a name and description of a site. 
@@ -202,10 +220,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_URL => $request,
-		    CURLOPT_POSTFIELDS => http_build_query($fields)
+		    CURLOPT_POSTFIELDS => http_build_query($fields),
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the putSitesGroups method updates a name and description of a group. 
@@ -226,10 +246,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_URL => $request,
-		    CURLOPT_POSTFIELDS => http_build_query($fields)
+		    CURLOPT_POSTFIELDS => http_build_query($fields),
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the putSitesUsers method updates a firstName, lastName, and an email for a user for a site.
@@ -252,10 +274,12 @@ class Sites extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_URL => $request,
-		    CURLOPT_POSTFIELDS => http_build_query($fields)
+		    CURLOPT_POSTFIELDS => http_build_query($fields),
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 }
 ?>

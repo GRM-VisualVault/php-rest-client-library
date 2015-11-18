@@ -13,10 +13,12 @@ class Groups extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getGroupsId method requests a group.
@@ -31,10 +33,12 @@ class Groups extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getGroupsUsers method requests all users of a group.
@@ -49,10 +53,12 @@ class Groups extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getGroupsUsersId method requests a user of a group.
@@ -67,10 +73,12 @@ class Groups extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the postGroups method creates a group.
@@ -92,10 +100,12 @@ class Groups extends Auth{
 			CURLOPT_HTTPHEADER => array(
     			'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the putGroups method updates a group.
@@ -117,9 +127,11 @@ class Groups extends Auth{
 			CURLOPT_HTTPHEADER => array(
     			'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 }

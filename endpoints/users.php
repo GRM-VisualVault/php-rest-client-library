@@ -13,10 +13,12 @@ class Users extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getUsersId method requests a user.
@@ -31,10 +33,12 @@ class Users extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the getUsersToken method requests a web login token for a user.
@@ -49,10 +53,22 @@ class Users extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+
+		$jsonIterator = new RecursiveIteratorIterator(
+	    new RecursiveArrayIterator(json_decode($response, TRUE)),
+	    RecursiveIteratorIterator::SELF_FIRST);
+
+		foreach ($jsonIterator as $key => $val) {
+				$x = [
+					$key => $val
+				];
+			} 	
+		return $x['webToken'];
 	}
 
 	// the postUsers method creates a user for a site.
@@ -77,10 +93,12 @@ class Users extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_URL => $request,
-		    CURLOPT_POSTFIELDS => http_build_query($fields)
+		    CURLOPT_POSTFIELDS => http_build_query($fields),
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the putUsers method updates a firstName, lastName, and an email for a user.
@@ -103,9 +121,11 @@ class Users extends Auth{
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 		    CURLOPT_URL => $request,
-		    CURLOPT_POSTFIELDS => http_build_query($fields)
+		    CURLOPT_POSTFIELDS => http_build_query($fields),
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 }

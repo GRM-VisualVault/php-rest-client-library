@@ -17,10 +17,12 @@ class FormInstance extends Auth{
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the relateDoc method relates a form instance to a document. 
@@ -38,10 +40,12 @@ class FormInstance extends Auth{
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the relateProject method relates a form instance to a project. 
@@ -59,10 +63,12 @@ class FormInstance extends Auth{
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the unrelateForm method unrelates a form instance from another form instance.
@@ -80,10 +86,12 @@ class FormInstance extends Auth{
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the unrelateDoc method unrelates a form instance from a document. 
@@ -101,10 +109,12 @@ class FormInstance extends Auth{
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the unrelateProject method unrelates a form instance from a project. 
@@ -122,9 +132,11 @@ class FormInstance extends Auth{
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 }

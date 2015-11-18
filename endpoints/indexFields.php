@@ -13,10 +13,12 @@ class IndexFields extends Auth{
 		    CURLOPT_HTTPGET => true,
 		    CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
-		    CURLOPT_URL => $request
+		    CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 		    ));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 
 	// the postIndexFields method creates an index field definition.
@@ -48,10 +50,12 @@ class IndexFields extends Auth{
 				CURLOPT_HTTPHEADER => array(
 					'Authorization: Bearer ' . $AccessToken),
 				CURLOPT_POSTFIELDS => http_build_query($fields),
-				CURLOPT_URL => $request
+				CURLOPT_URL => $request,
+				CURLOPT_RETURNTRANSFER => 1
 				));
-			curl_exec($ch);
+			$response = curl_exec($ch);
 			curl_close($ch);
+			return $response;
 	}
 
 	// the putIndexFields updates an indexfield definition.
@@ -60,7 +64,7 @@ class IndexFields extends Auth{
 	// $fieldType is an int value. see http://developer.visualvault.com/api/v1/RestApi/DataTypesDetails/IndexFieldDefinition
 	// for the correct int value corresponding to the indexFieldDefinition type you are creating.
 	// $queryId is a queryid, and $dropDownListId is a dropDownListId.
-	// $required is a boolean, true or false for required. $defaultValue is the desired default value for the indexFieldDefinition.   
+	// $required is a boolean, true or false for required. $defaultValue is the default value for the indexFieldDefinition.   
 	// you may update the label and description of an index field definition.
 	function putIndexFields($id,$label,$description,$fieldType,$queryId,
 		$dropDownListId,$required,$defaultValue){
@@ -85,10 +89,12 @@ class IndexFields extends Auth{
 				CURLOPT_HTTPHEADER => array(
 					'Authorization: Bearer ' . $AccessToken),
 				CURLOPT_POSTFIELDS => http_build_query($fields),
-				CURLOPT_URL => $request
+				CURLOPT_URL => $request,
+				CURLOPT_RETURNTRANSFER => 1
 				));
-			curl_exec($ch);
+			$response = curl_exec($ch);
 			curl_close($ch);
+			return $response;
 	}
 
 	// the relateIndexFields method relates an index field definition to a folder.
@@ -107,10 +113,12 @@ class IndexFields extends Auth{
 			CURLOPT_HTTPHEADER => array(
 				'Authorization: Bearer ' . $AccessToken),
 			CURLOPT_POSTFIELDS => http_build_query($fields),
-			CURLOPT_URL => $request
+			CURLOPT_URL => $request,
+			CURLOPT_RETURNTRANSFER => 1
 			));
-		curl_exec($ch);
+		$response = curl_exec($ch);
 		curl_close($ch);
+		return $response;
 	}
 }
 ?>
